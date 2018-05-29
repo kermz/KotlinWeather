@@ -1,4 +1,41 @@
 <resources>
+    //App name
     <string name="app_name">Monese</string>
-    <string name="action_settings">Settings</string>
+
+    //Errors
+    <string name="errorConnection">Check internet connection</string>
+    <string name="errorResult">Location is not enabled or you aren\n't on Earth</string>
+    <string name="errorNoPreviousData">No previous data available, use the button below to refresh</string>
+
+    //Data name strings
+    <string name="windSpeed">Wind speed</string>
+    <string name="windDirection">Wind direction</string>
+    <string name="temperature">Temperature</string>
+    <string name="lastUpdated">Last updated</string>
+
+    //Units of measure
+    <string name="windMetersPerSecond">m/s</string>
+    <string name="temperatureCelsius">°</string>
+
+    //Alert
+    <string name="enableLocation">Enable Location</string>
+    <string name="alertMessage">Your Locations Settings is set to \'Off\'. Please Enable Location to use this app</string>
+    <string name="locationSettings">Location Settings</string>
+    <string name="cancel">Cancel</string>
+
+    //Logs
+    <string name="connectionSuspended">Connection Suspended</string>
+    <string name="connectionFailed">Connection failed. Error: </string>
+
+    //Compass Directions
+    <string-array name="directionsArray">
+        <item>North</item>
+        <item>North-East</item>
+        <item>East</item>
+        <item>South-East</item>
+        <item>South</item>
+        <item>South-West</item>
+        <item>West</item>
+        <item>North-West</item>
+    </string-array>
 </resources>

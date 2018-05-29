@@ -9,9 +9,9 @@ import retrofit2.http.Query
 interface OpenWeatherAPI {
 
     @GET("weather?")
-    fun currentWeather(@Query("lat") lat : String, @Query("lon") lon : String) : Call<WeatherModel>
+    fun currentWeather(@Query("lat") lat: String, @Query("lon") lon: String): Call<WeatherModel>
 
     companion object {
-        val BASE_URL = "http://api.openweathermap.org/data/2.5/"
+        const val BASE_URL = "http://api.openweathermap.org/data/2.5/"
     }
 }

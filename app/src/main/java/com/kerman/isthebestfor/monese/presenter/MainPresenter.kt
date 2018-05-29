@@ -10,11 +10,11 @@ import retrofit2.Response
 import java.util.*
 import javax.inject.Inject
 
-class MainPresenter(val view : MainView) {
+class MainPresenter(val view: MainView) {
     @Inject
-    lateinit var api : OpenWeatherAPI
+    lateinit var api: OpenWeatherAPI
 
-    fun getWeather(lat : String, lon : String) {
+    fun getWeather(lat: String, lon: String) {
         view.showSpinner()
         api.currentWeather(lat, lon).enqueue(object : Callback<WeatherModel> {
 
@@ -25,13 +25,14 @@ class MainPresenter(val view : MainView) {
                 } ?: view.showErrorToast(ErrorTypes.NO_RESULT_FOUND)
             }
 
-            override fun onFailure(call: Call<WeatherModel>?, t: Throwable) {
+            override fun onFailure(call: Call<WeatherModel>, t: Throwable) {
                 view.showErrorToast(ErrorTypes.CALL_ERROR)
                 t.printStackTrace()
             }
         })
     }
-    private fun  createListForView(weatherResponse : WeatherModel) {
+
+    private fun createListForView(weatherResponse: WeatherModel) {
         val weather = mutableListOf<WeatherModel>()
         val rightNow = Calendar.getInstance()
         val weatherItem = WeatherModel(weatherResponse.weather, weatherResponse.main, weatherResponse.wind, rightNow.time)

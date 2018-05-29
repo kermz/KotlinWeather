@@ -14,7 +14,7 @@ class OpenWeatherAPIModule {
 
     @Provides
     @Singleton
-    fun provideApi(gson : Gson): OpenWeatherAPI {
+    fun provideApi(gson: Gson): OpenWeatherAPI {
 
         val apiClient = OkHttpClient.Builder().addInterceptor(OpenWeatherInterceptor()).build()
 
